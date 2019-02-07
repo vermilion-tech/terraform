@@ -1,0 +1,9 @@
+# Terraform
+*.tfvars
+
+.terraform
+
+*.tfstate*
+
+# Private Key Files
+*.pem*

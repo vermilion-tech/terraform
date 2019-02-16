@@ -7,6 +7,11 @@ variable "name" {
   default = "cluster-terraform"
 }
 
+variable "prefix" {
+  type    = "string"
+  default = ""
+}
+
 variable "version" {
   type    = "string"
   default = "1.13.2-do.0"

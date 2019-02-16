@@ -1,5 +1,9 @@
+locals {
+  name = "${var.prefix != "" ? "${var.name}-${var.prefix}" : var.name}"
+}
+
 resource "digitalocean_kubernetes_cluster" "cluster" {
-  name    = "${var.name}"
+  name    = "${local.name}"
   region  = "${var.region}"
   version = "${var.version}"
 

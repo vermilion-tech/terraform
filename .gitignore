@@ -7,3 +7,5 @@
 
 # Private Key Files
 *.pem*
+
+.DS_Store

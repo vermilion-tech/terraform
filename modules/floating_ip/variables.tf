@@ -3,11 +3,11 @@
  */
 
 variable "droplet_id" {
-  type = "string"
+  type        = "string"
   description = "Droplet ID to associate with the Floating IP."
 }
 
 variable "region" {
-  type = "string"
+  type        = "string"
   description = "Region to associate with the Floating IP."
 }

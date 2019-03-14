@@ -3,17 +3,17 @@
  */
 
 variable "name" {
-  type = "string"
+  type        = "string"
   description = "Name to associate with the Droplet"
 }
 
 variable "region" {
-  type = "string"
+  type        = "string"
   description = "Region to use when creating the Droplet"
 }
 
 variable "ssh_keys" {
-  type = "list"
+  type        = "list"
   description = "List of ssh_keys to associate with the Droplet"
 }
 
@@ -22,32 +22,33 @@ variable "ssh_keys" {
  */
 
 variable "size" {
-  type = "string"
+  type        = "string"
   description = "Size to use when creating the Droplet"
-  default = "s-1vcpu-1gb"
+  default     = "s-1vcpu-1gb"
 }
 
 variable "image" {
-  type = "string"
+  type        = "string"
   description = "Image to use when creating the Droplet"
-  default = "ubuntu-18-10-x64"
+  default     = "ubuntu-18-10-x64"
 }
 
 variable "monitoring" {
-  type = "string"
+  type        = "string"
   description = "Specifies whether to enable Droplet monitoring"
-  default = "true"
+  default     = "true"
 }
 
 variable "resize_disk" {
-  type = "string"
+  type        = "string"
   description = "Specifies whether to resize the disk when changing Droplet size"
-  default = "false"
+  default     = "false"
 }
 
 variable "user_data" {
-  type = "string"
+  type        = "string"
   description = "user_data"
+
   default = <<EOF
 #!/usr/bin/env bash
 sudo apt-get update && sudo apt-get install -yq python
@@ -55,7 +56,7 @@ EOF
 }
 
 variable "tags" {
-  type = "list"
+  type        = "list"
   description = "Tags to associate with the Droplet"
-  default = []
+  default     = []
 }

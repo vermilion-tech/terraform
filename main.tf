@@ -6,28 +6,29 @@ provider "digitalocean" {
 module "ssh_key" {
   source = "./modules/ssh_key"
 
-  name = "terraform-publickey"
+  name            = "terraform-publickey"
   public_key_path = "${file("${path.root}/terraform.pem.pub")}"
 }
 
 module "droplet" {
   source = "./modules/droplet"
 
-  name = "terraform-digitalocean"
+  name   = "terraform-digitalocean"
   region = "sfo2"
+
   ssh_keys = [
-    "${module.ssh_key.fingerprint}"
+    "${module.ssh_key.fingerprint}",
   ]
 
   tags = [
-    "terraform"
+    "terraform",
   ]
 }
 
 module "ansible" {
   source = "./modules/ansible"
 
-  ipv4_address = "${module.droplet.ipv4_address}"
-  ssh_key_path = "${path.root}/terraform.pem"
+  ipv4_address  = "${module.droplet.ipv4_address}"
+  ssh_key_path  = "${path.root}/terraform.pem"
   playbook_path = "${path.root}/playbooks/docker.yml"
 }

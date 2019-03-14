@@ -1,5 +1,5 @@
 ---
-# Configures DigitalOcean provisioned Droplet with Docker
+# Configure Docker
 
 - name: Configure Docker
   hosts: all

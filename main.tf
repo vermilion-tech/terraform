@@ -24,11 +24,3 @@ module "droplet" {
     "terraform",
   ]
 }
-
-module "ansible" {
-  source = "./modules/ansible"
-
-  ipv4_address  = "${module.droplet.ipv4_address}"
-  ssh_key_path  = "${path.root}/terraform.pem"
-  playbook_path = "${path.root}/playbooks/docker.yml"
-}

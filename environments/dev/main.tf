@@ -7,12 +7,17 @@ provider "digitalocean" {
 }
 
 #===============================================================================
+resource "random_id" "resource" {
+  prefix      = "${var.base_name}-"
+  byte_length = 8
+}
 
+#===============================================================================
 module "droplet" {
   source = "../../modules/droplet"
 
   image    = "${var.image}"
-  name     = "${var.base_name}"
+  name     = "${random_id.resource.hex}"
   region   = "${var.region}"
   ssh_keys = "${var.ssh_keys}"
   size     = "${var.size}"
@@ -30,6 +35,6 @@ module "dns" {
   source = "../../modules/dns"
 
   domain = "${var.domain}"
-  name   = "${var.base_name}-${module.droplet.droplet_id}"
+  name   = "${random_id.resource.hex}"
   value  = "${module.floating_ip.ipv4_address}"
 }

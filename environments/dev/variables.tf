@@ -8,7 +8,7 @@ variable "do_token" {
 variable "image" {
   type        = "string"
   default     = "44854255"
-  description = "image for droplet defaults to vermilion-ubuntu-18.04-base"
+  description = "image for droplet, defaults to vermilion-ubuntu-18.04-base"
 }
 
 /*

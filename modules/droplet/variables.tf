@@ -42,21 +42,17 @@ variable "monitoring" {
 variable "resize_disk" {
   type        = "string"
   description = "Specifies whether to resize the disk when changing Droplet size"
-  default     = "false"
+  default     = "true"
 }
 
 variable "user_data" {
   type        = "string"
   description = "user_data"
-
-  default = <<EOF
-#!/usr/bin/env bash
-sudo apt-get update && sudo apt-get install -yq python
-EOF
+  default     = ""
 }
 
 variable "tags" {
   type        = "list"
   description = "Tags to associate with the Droplet"
-  default     = []
+  default     = ["terraform"]
 }

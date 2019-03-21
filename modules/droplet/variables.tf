@@ -17,11 +17,6 @@ variable "ssh_keys" {
   description = "List of ssh_keys to associate with the Droplet"
 }
 
-variable "user_data" {
-  type        = "string"
-  description = "user_data"
-}
-
 /*
   Variables w/ default
  */
@@ -48,6 +43,12 @@ variable "resize_disk" {
   type        = "string"
   description = "Specifies whether to resize the disk when changing Droplet size"
   default     = "true"
+}
+
+variable "user_data" {
+  type        = "string"
+  description = "user_data"
+  default     = "exit 0"
 }
 
 variable "tags" {

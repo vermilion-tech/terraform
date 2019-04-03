@@ -2,7 +2,9 @@
 resource "digitalocean_firewall" "web" {
   name = "${var.name}"
 
-  droplet_ids = ["${var.droplet_id}"]
+  tags = "${var.tags}"
+
+  droplet_ids = "${var.droplet_ids}"
 
   inbound_rule = "${var.inbound_rules}"
 

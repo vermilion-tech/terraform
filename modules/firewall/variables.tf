@@ -2,9 +2,14 @@
   Variables w/o default
  */
 
-variable "droplet_id" {
-  type        = "string"
-  description = "Droplet ID to associate with the firewall"
+variable "droplet_ids" {
+  type        = "list"
+  description = "Droplet IDs to associate with the firewall"
+}
+
+variable "tags" {
+  type        = "list"
+  description = "Tags to associate with the firewall"
 }
 
 /*

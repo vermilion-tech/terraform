@@ -5,11 +5,13 @@
 variable "droplet_ids" {
   type        = "list"
   description = "Droplet IDs to associate with the firewall"
+  default     = []
 }
 
 variable "tags" {
   type        = "list"
   description = "Tags to associate with the firewall"
+  default     = []
 }
 
 /*
